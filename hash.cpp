@@ -6,7 +6,7 @@ using namespace std;
 
 
 string solution(vector<string> participant, vector<string> completion) {
-    vector<int> p_code, c_code; // hash숫자로 저장할것들
+    vector<int> p_code, c_code; 
     string answer = "";
     vector<string>::iterator finder;
 
