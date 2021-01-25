@@ -35,5 +35,4 @@ int main(void)
 {
 	AAA note("problem");
 	cout << note << endl;
-
 }

@@ -3,6 +3,10 @@
     "files.associations": {
         "vector": "cpp",
         "algorithm": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "new": "cpp",
+        "memory": "cpp",
+        "utility": "cpp",
+        "iterator": "cpp"
     }
 }

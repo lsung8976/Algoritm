@@ -75,7 +75,7 @@ int main()
             break;
         cnt++;
     }
-    cout << allclocknum.size() << endl;
+    //cout << allclocknum.size() << endl;
     cout << cnt << endl;
     return 0;
 }

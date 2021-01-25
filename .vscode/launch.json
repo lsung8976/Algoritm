@@ -8,7 +8,7 @@
         "name": "clang++ - Build and debug active file",
         "type": "cppdbg",
         "request": "launch",  
-        "program": "${fileDirname}/clockNumber",
+        "program": "${fileDirname}/crossLine",
         "args": [],
         "stopAtEntry": true,
         "cwd": "${workspaceFolder}",
