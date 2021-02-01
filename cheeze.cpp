@@ -24,8 +24,8 @@ void bfs(int y, int x, int width, int height) {
         space[y][x] = 0;
         if(x > 0) bfs(y, x - 1, width, height);
         if(y > 0) bfs(y - 1, x, width, height);
-        if(x < width - 1) bfs(y, x + 1, width, height);
-        if(y < height - 1) bfs(y + 1, x, width, height);
+        if(x < width) bfs(y, x + 1, width, height);
+        if(y < height) bfs(y + 1, x, width, height);
     }
 }
 
