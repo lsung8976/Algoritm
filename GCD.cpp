@@ -15,13 +15,13 @@ int main()
 	int time;
 	int n;
 	int gcd_num = 0;
-	int total_gcd = 0;//gcd ÀüÃ¼ÇÕ
+	int total_gcd = 0;//gcd ï¿½ï¿½Ã¼ï¿½ï¿½
 
-	cin >> time; // ÀüÃ¼ ¹Ýº¹ È½¼ö
+	cin >> time; // ï¿½ï¿½Ã¼ ï¿½Ýºï¿½ È½ï¿½ï¿½
 
 	for (int i = 0; i < time; i++)
 	{
-		cin >> n; // È½¼ö ÀÔ·Â
+		cin >> n; // È½ï¿½ï¿½ ï¿½Ô·ï¿½
 		p = new int[n];
 
 		for (int i = 0; i < n; i++)
@@ -41,7 +41,7 @@ int main()
 
 
 		/*
-		cin >> n;	//È½¼ö ÀÔ·Â
+		cin >> n;	//È½ï¿½ï¿½ ï¿½Ô·ï¿½
 
 		p = new int[n];
 		for (int i = 0; i < n; i++)
