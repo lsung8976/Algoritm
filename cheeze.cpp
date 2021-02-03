@@ -5,28 +5,34 @@ using namespace std;
 vector < vector<int> > space;
 vector<int> amount;
 
+int dx[4] = {0, 0, -1, 1};
+int dy[4] = {-1, 1, 0, 0};
+
 int checkSpace(int width, int height)
 {
     int cnt = 0;
     for(int i = 0;i < height; i++){
-        for(int j= 0;j< width;j++){
+        for(int j= 0;j < width;j++){
             if(space[i][j]) {
                 cnt++;
             }
         }
     }
-
     return cnt;
 }
+
 void bfs(int y, int x, int width, int height) {
-    if(space[y][x] == 1 && space[y][x] == 0) return;
-    else if(space[y][x] == 2){
+    if(space[y][x] == 2){
         space[y][x] = 0;
-        if(x > 0) bfs(y, x - 1, width, height);
-        if(y > 0) bfs(y - 1, x, width, height);
-        if(x < width) bfs(y, x + 1, width, height);
-        if(y < height) bfs(y + 1, x, width, height);
+        for(int i=0;i<4;i++)
+        {
+            int ny = y + dy[i];
+            int nx = x + dx[i];
+            if(nx >= 0 && ny >= 0 && nx < width && ny < height)
+                bfs(ny, nx, width, height);
+        }
     }
+    else if(space[y][x] == 1 && space[y][x] == 0) return;
 }
 
 bool checkCloseUnit(int y, int x, int width, int height)
@@ -99,6 +105,7 @@ int main() {
             for(int j = 0; j < width ; j++){
                 bfs(i, j, width, height);
             }
+
         }
         worldCnt++;
     }
