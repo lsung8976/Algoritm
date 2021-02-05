@@ -1,4 +1,4 @@
-//boj.kr/
+//boj.kr/2178
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -11,7 +11,7 @@ vector< vector<int> > cntMaze;  // 거리를 적어놓은 미로 벡터
 vector< pair<int, int> > check; // 그 정점을 탐색했는가?
 int dirct[4][2] = { {0, 1}, {0, -1}, {1, 0}, {-1, 0} };
 queue < pair<int ,int> > q; //큐
-int cnt = 0;    // 거리 상수
+int cnt = 1;    // 거리 상수
 
 bool checkMap(int x, int y)
 {
@@ -22,8 +22,12 @@ bool checkMap(int x, int y)
             if(check[i].first == x && check[i].second == y)
                 return false;
         }
+        return true;
     }
-    return true;
+    else 
+    {
+        return false;
+    }
 }
 
 void go(int x, int y, int h, int w)
@@ -32,7 +36,6 @@ void go(int x, int y, int h, int w)
     q.push(make_pair(x,y));
     while(!q.empty())
     {
-        cnt++; // 거리 증가
         int px = q.front().first;
         int py = q.front().second;
         q.pop(); //한 정점에서 주변 정점 탐색이후 큐에있는 정점 정보 원소 제거
@@ -44,8 +47,8 @@ void go(int x, int y, int h, int w)
             {
                 if(checkMap(nx, ny))
                 {
-                    cntMaze[nx][ny] = cnt;      //거리 기록
-                    check.push_back(make_pair(nx,ny));  // 통과했다는 기록
+                    cntMaze[nx][ny] = cntMaze[px][py] + 1;  //거리 기록
+                    check.push_back(make_pair(nx, ny));  // 통과했다는 기록
                     q.push(make_pair(nx,ny));   //큐에 등록
                 }
             }
@@ -79,14 +82,9 @@ int main()
     go(0,0, height, width);
 
     //거리를 기록한 미로 벡터 출력
-    for(int i = 0; i < height ; i++)
-    {
-        for(int j = 0; j < width ; j++)
-        {
-            cout << cntMaze[i][j] << " ";
-        }
-        cout << endl;
-    }
+    
+    cout << cntMaze[height - 1][width - 1] << endl; //도착점 거리 출력
+
 
     return 0;
 }
