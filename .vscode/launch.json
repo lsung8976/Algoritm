@@ -8,12 +8,13 @@
         "name": "clang++ - Build and debug active file",
         "type": "cppdbg",
         "request": "launch",  
-        "program": "${workspaceFolder}/explorerMaze",
+        "program": "${workspaceFolder}/PlusN5",
         "args" : [],
         "stopAtEntry": false,
         "cwd": "${workspaceFolder}",
         "environment": [],
         "externalConsole": true,
-        "MIMode": "lldb"      }
+        "MIMode": "lldb"      
+      }
     ]
   }

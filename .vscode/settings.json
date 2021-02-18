@@ -7,6 +7,11 @@
         "new": "cpp",
         "memory": "cpp",
         "utility": "cpp",
-        "iterator": "cpp"
+        "iterator": "cpp",
+        "array": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp"
     }
 }
