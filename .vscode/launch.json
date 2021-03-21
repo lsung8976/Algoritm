@@ -8,7 +8,7 @@
         "name": "clang++ - Build and debug active file",
         "type": "cppdbg",
         "request": "launch",  
-        "program": "${workspaceFolder}/PlusN5",
+        "program": "${workspaceFolder}/testBoard",
         "args" : [],
         "stopAtEntry": false,
         "cwd": "${workspaceFolder}",

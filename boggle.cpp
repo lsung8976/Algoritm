@@ -24,7 +24,7 @@ vector<int> find_y;
 void string_find(string str, int x, int y)
 {
 	if (str.empty()) {
-		cout << "Ã£¾Ò½À´Ï´Ù" << endl;
+		cout << "Ã£ï¿½Ò½ï¿½ï¿½Ï´ï¿½" << endl;
 		return;
 	}
 	if (str.back() == map2[x][y])
@@ -43,10 +43,10 @@ int main()
 	int size = 0;
 	int i, j;
 	cin >> s;
-	// ¹®ÀÚ¿­ ¸ÕÀú µÚÁý±â
+	// ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	reverse(s.begin(), s.end());
 
-	//Ã¹Â°±ÛÀÚ ¸ÕÀú Ã£°í Å½»ö
+	//Ã¹Â°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ Å½ï¿½ï¿½
 	for (i = 0; i < 5; i++)
 	{
 		for (j = 0; j < 5; j++)
