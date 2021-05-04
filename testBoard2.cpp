@@ -23,23 +23,26 @@ int main()
     {
         d[i] = d[i-1] + d[i-2];
     }
-	//cout  << d[50] << endl;
-	for(int i=0;i<str.size();i++)
+
+	for(int i=0;i < str.size();i++)
     {
-        if(str[i] == '0')
-        {
-            ans = ans * d[cnt];
-            cnt = 0;
-        }
         if(str[i] == '1')
         {
             cnt++;
-            ans = d[cnt];
+        }
+
+        if(str[i] == '0')
+        {
+            ans *= d[cnt];
+            cnt = 0;
         }
     }
-    
+
+    ans *= d[cnt];
+
     cout << ans << endl;
 
+    printf("%d, %d", sizeof(int), sizeof(long));
     return 0;
-
+    
 }

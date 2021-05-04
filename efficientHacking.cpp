@@ -1,40 +1,40 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include <queue>
 
 using namespace std;
 
-vector<int> map; //맵
+vector< vector<int> > map; //맵
 vector<bool> chkMap; //지나간자리 check
+vector<int> ans;
 int cnt = 0 ;
 
-int dfs(int node, int size)
+void dfs(int node)
 {
-    int hop = 0;
-    while(!map[node].empty())
+    chkMap[node] = true;
+
+    for(int i = 0;i < map[node].size(); i++)
     {
-        int smallNode = map[node].back(); map[node].pop_back();
+        int smallNode = map[node][i];
         if(chkMap[smallNode] == false)
         {
-            hop++;
-            hop += dfs(smallNode, size);
-            chkMap[smallNode] = true;
+            cnt++;
+            dfs(smallNode);
         }
     }
-    return hop;
+    return;
 }
 
 int main()
 {  
     int n,m;
     int temp1 ,temp2;
-    int max = -987654321;
 
     cin >> n;
     cin >> m;
 
-    vector<int> fmap(n + 1);
-    vector<int> hop(n + 1, 0);
+    vector< vector<int> > fmap(n + 1);
     vector<bool> fchkMap(n+1,0);    //check 맵 초기화용
     
     map = fmap;
@@ -45,35 +45,36 @@ int main()
         cin >> temp1 >> temp2;
         map[temp2].push_back(temp1);
     }
-
-    for(int i = 1; i <= n; i++)
-    {
-        for(int j = 0; j < map[i].size(); j++)
-        {
-            cout << map[i][j] << " ";
-        }
-        cout << endl;
-    }
     
-    /*
+    int max_cnt = 0;
+    
     for(int i=1;i<=n;i++)
     {
-        hop[i] = dfs(i, n);
+        cnt = 0;
+        dfs(i);
+
+        if(cnt == max_cnt)
+        {
+            ans.push_back(i);
+        }
+        else if(cnt > max_cnt)
+        {
+            max_cnt = cnt;
+            ans.clear();
+            ans.push_back(i);
+        }
+
         chkMap = fchkMap;
     }
 
-    for(int i=1;i<=n;i++)
+    sort(ans.begin(), ans.end());
+
+    for(int i=0;i<ans.size();i++)
     {
-        max = (max > hop[i]) ? max : hop[i];
-    }
-    
-    for(int i=1;i<=n;i++)
-    {
-        if(max == hop[i])
-            cout << hop[i] << " ";
+        cout << ans[i] << " ";
     }
     cout << endl;
-    */
+    
 
     return 0;
 }

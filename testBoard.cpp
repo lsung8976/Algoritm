@@ -7,7 +7,7 @@ vector< vector<bool> > map;
 
 bool checkSpac(int size , int i, int j, int num)
 {
-    if((i + size) >= num || (j + size) >= num) return false;
+    if((i + size) > num || (j + size) > num) return false;
 
     for(int k = i ; k < i + size; k++)
     {
@@ -68,12 +68,6 @@ int main()
             }
         }
     }
-
-    for(int i=0;i<=num;i++)
-    {
-        cout << cnt[i] << " ";
-    }
-    cout << endl;
 
     for(int i=1;i<=num;i++)
     {
