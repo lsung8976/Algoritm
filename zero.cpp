@@ -1,30 +1,33 @@
+//10773 제로
 #include <iostream>
 #include <stdio.h>
-#include <queue>
+#include <stack>
 #include <cstring>
 
 using namespace std;
 
 int main()
 {
-    int k, temp, sum;
-    scanf("%d", &k);
-    queue<int> q;
+    long long k, temp, sum;
+    scanf("%lld", &k);
+    sum = 0;
+    stack<long long> stk;
     
+    sum = 0;
     for(int i=0;i<k;i++)
     {
-        scanf("%d", &temp);
-        if(temp== 0)
-            q.pop();
+        scanf("%lld", &temp);
+        if(temp == 0)
+            stk.pop();
         else
-            q.push(temp);
+            stk.push(temp);
     }
 
-    while(k--)
+    while(!stk.empty())
     {
-        sum += q.back(); q.pop();
+        sum += stk.top(); stk.pop();
     }
-    
-    printf("%d", &sum);
+
+    printf("%lld\n", sum);
     return 0;
 }

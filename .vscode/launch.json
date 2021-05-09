@@ -4,11 +4,12 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+      
       {
         "name": "clang++ - Build and debug active file",
         "type": "cppdbg",
         "request": "launch",  
-        "program": "${workspaceFolder}/testBoard",
+        "program": "${workspaceFolder}/zero",
         "args" : [],
         "stopAtEntry": false,
         "cwd": "${workspaceFolder}",
@@ -17,4 +18,19 @@
         "MIMode": "lldb"      
       }
     ]
+    /*
+    "configurations": [
+      {
+          "name": "Launch (lldb)",
+          "type": "cppdbg",
+          "request": "launch",
+          "program": "${workspaceFolder}/zero",
+          "args": [],
+          "stopAtEntry": false,
+          "cwd": "${workspaceFolder}",
+          "environment": [],
+          "externalConsole": false
+      }
+  ]*/
+  
   }
