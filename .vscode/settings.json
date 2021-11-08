@@ -13,6 +13,7 @@
         "string_view": "cpp",
         "ostream": "cpp",
         "iostream": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "ratio": "cpp"
     }
 }
