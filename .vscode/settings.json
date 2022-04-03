@@ -14,6 +14,10 @@
         "ostream": "cpp",
         "iostream": "cpp",
         "queue": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "random": "cpp",
+        "locale": "cpp",
+        "complex": "cpp",
+        "cstdio": "cpp"
     }
 }
